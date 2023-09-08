@@ -1,0 +1,196 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300&family=Nunito:wght@200&family=Poppins:wght@300&family=Quattrocento&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    
+    <title>Informacion sobre Instrumentos Musicales</title>
+</head>
+<body>
+  <img src="" alt="">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark py-2 fixed-top">
+      <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navmenu">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'home' %}"><span class="text-primary">INICIO</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'guitarras' %}">Guitarras</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'bajos' %}">Bajos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'pedales' %}">Pedales</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'amplificadores' %}">Amplificadores</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'teclados' %}">Teclados</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'baterias' %}">Baterias</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'otros' %}">Otros</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'acerca_de_mi' %}">Conóceme</a>
+                </li>
+                <div class="container"></div>
+                <div class="container"></div>
+                <div class="container"></div>
+                <div class="container"></div>
+                <div class="container"></div>
+                {% if request.user.is_authenticated %}
+                <div class="container">
+                <li class="nav-item">
+                  <span class="text-light"> Hola <strong>{{request.user.first_name}}</strong>!</span>
+                </li>
+                </div>
+                <div class="container">
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'editar_perfil' %}"><span class="text-primary">Perfil</span></a>
+                </li>
+                </div>
+                <div class="container">
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'logout' %}"><span class="text-primary">Logout</span></a>
+                </li>
+                </div>
+                <div class="container">
+                <li class="nav-item">
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <i class="bi bi-search"></i>
+                  </button>
+                </li>
+                </div>
+                {% else %}
+                <div class="container">
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'login' %}"><span class="text-primary">Login</span></a>
+                </li>
+                </div>
+                <div class="container">
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'registro' %}"><span class="text-primary">Registrate</span></a>
+                </li> 
+                </div>         
+              {% endif %}
+           </ul>
+          </div>    
+      </div>     
+  </nav>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form method="get" action="{% url 'busqueda_instrumento' %}">
+            <input type="text" name="tipo" placeholder="Buscar por título" value="{{ request.GET.tipo }}">
+            <button ><i class="bi bi-search" type="submit"></i></button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+      {% block content %}
+
+    <!-- Inicio -->
+<br>
+<br>
+<br>
+<section id="home" class="text-dark p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
+  <div class="container text-center">
+    <div class="">
+        <div>
+            <h2>Bienvenido (a) al <span class="text-primary">blog de MercMusic, tu tienda de instrumentos musicales</span></h2>
+        </div>
+    </div>
+</div>
+
+</section>
+
+
+    <!-- Link Venta/Permuta Instrumento -->
+
+    <section class="p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
+      <div class="container">
+          <div class="">
+              <div class="text-center">
+                  <p class="lead my-4">
+                    Quieres saber mas sobre nuestros instrumentos?
+                  </p>
+                  <a href="{% url 'busqueda_instrumento' %}"><button type="submit" class="btn btn-primary"><i class="bi bi-search">Busca aca</i></button></a>
+              </div>
+          </div>
+      </div>
+  </section>
+
+
+  <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  <i class="bi bi-search"></i>
+</button>
+ 
+  </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+      {% endblock %}
+
+
+  <!-- Footer -->
+
+  <footer class="p-5 bg-dark text-white text-center position-relative">
+      <div class="container">
+          <p class="lead text-white">Copyright &copy; 2023 Julian Montani</p>
+          <a href="" class="position-absolute bottom-0 end-0 p-5">
+              <i class="bi bi-arrow-up-circle h1"></i>
+          </a>
+      </div>
+  </footer>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+  crossorigin="anonymous"></script>
+
+</body>
+</html>

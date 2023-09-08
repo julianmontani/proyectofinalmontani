@@ -1,0 +1,43 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+<br>
+<br>
+
+<div class="container">
+
+
+<p><h4>{{bateria.titulo}}</h4></p>
+{% if bateria.imagenInstrumento %}
+    <p><img src="{{bateria.imagenInstrumento.url}}" alt=""></p>
+{% endif %}
+<p>Marca: {{bateria.marca}}</p>
+<p>Modelo: {{bateria.modelo}}</p>
+<p>Descripción: {{bateria.descripcion}}</p>
+<p>Año: {{bateria.year}}</p>
+<p>Precio(US$): {{bateria.precio}}</p>
+<p>Teléfono de Contacto: {{bateria.telefonoContacto}}</p>
+<p>Email de Contacto: {{bateria.emailContacto}}</p>
+
+</div>
+<br>
+<div class="container">
+    <h4>Comentarios...</h4>
+    <br>
+    <div class="container">
+    {% if not bateria.comentarios.all %}
+        No han comentado este instrumento
+    {% else %}
+        {% for comentario in bateria.comentarios.all %}
+        <p><strong>{{comentario.nombre}}</strong></p>
+        <p>{{comentario.mensaje}}</p>
+        <p><small>{{comentario.fechaComentario}}</small></p>
+        <hr>
+        {% endfor %}
+    {% endif %}
+    <a href="{% url 'comentario' bateria.pk %}">Agrega un Comentario</a>
+    </div>
+</div>
+<br>
+{% endblock %}

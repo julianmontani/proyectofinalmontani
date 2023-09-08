@@ -1,0 +1,36 @@
+{% extends 'home.html' %}
+
+{% block content %}
+  <h1>Busqueda de Instrumentos</h1>
+
+  <form method="get" action="{% url 'busqueda_instrumento' %}">
+    <input type="text" name="q" placeholder="Buscar por título" value="{{ request.GET.q }}">
+    <button type="submit">Buscar</button>
+  </form>
+
+  <h2>Resultados de la búsqueda:</h2>
+
+  {% if instrumentos %}
+    <ul>
+      {% for instrumento in instrumentos %}
+        <li>
+          <h3>{{ instrumento.titulo }}</h3>
+          <p><strong>Tipo de instrumento:</strong> {{ instrumento.get_instrumento_display }}</p>
+          <p><strong>Marca:</strong> {{ instrumento.marca }}</p>
+          <p><strong>Modelo:</strong> {{ instrumento.modelo }}</p>
+          <p><strong>Descripción:</strong> {{ instrumento.descripcion }}</p>
+          <p><strong>Año:</strong> {{ instrumento.year }}</p>
+          <p><strong>Precio:</strong> ${{ instrumento.precio }}</p>
+          <p><strong>Fecha de Publicación:</strong> {{ instrumento.fechaPublicacion }}</p>
+          <p><strong>Teléfono de Contacto:</strong> {{ instrumento.telefonoContacto }}</p>
+          <p><strong>Email de Contacto:</strong> {{ instrumento.emailContacto }}</p>
+          {% if instrumento.imagenInstrumento %}
+            <img src="{{ instrumento.imagenInstrumento.url }}" alt="{{ instrumento.titulo }}" style="width: 200px; height: 150px;">
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No se encontraron instrumentos.</p>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+<br>
+<br>
+
+<div class="container">
+
+<p><h4>{{bajo.titulo}}</h4></p>
+{% if bajo.imagenInstrumento %}
+    <p><img src="{{bajo.imagenInstrumento.url}}" alt=""></p>
+{% endif %}
+<p>Marca: {{bajo.marca}}</p>
+<p>Modelo: {{bajo.modelo}}</p>
+<p>Descripción: {{bajo.descripcion}}</p>
+<p>Año: {{bajo.year}}</p>
+<p>Precio(US$): {{bajo.precio}}</p>
+<p>Teléfono de Contacto: {{bajo.telefonoContacto}}</p>
+<p>Email de Contacto: {{bajo.emailContacto}}</p>
+
+</div>
+<br>
+<div class="container">
+    <h4>Comentarios...</h4>
+    <br>
+    <div class="container">
+    {% if not bajo.comentarios.all %}
+        No han comentado este instrumento
+    {% else %}
+        {% for comentario in bajo.comentarios.all %}
+        <p><strong>{{comentario.nombre}}</strong></p>
+        <p>{{comentario.mensaje}}</p>
+        <p><small>{{comentario.fechaComentario}}</small></p>
+        <hr>
+        {% endfor %}
+    {% endif %}
+    <a href="{% url 'comentario' bajo.pk %}">Agrega un Comentario</a>
+    </div>
+</div>
+
+{% endblock %}
