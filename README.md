@@ -1,3 +1,8 @@
+dejo video explicativo sobre mi pagina web:
+https://youtu.be/zltg54VO0M8
+
+
+
 Blog de Instrumentos Musicales
 ¡Bienvenido al repositorio de mi proyecto de blog de instrumentos musicales! Este proyecto tiene como objetivo crear una plataforma en línea donde los amantes de la música pueden aprender sobre diferentes instrumentos musicales, sus características, historia y técnicas de interpretación. A continuación, encontrarás información importante sobre el proyecto.
 
