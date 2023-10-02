@@ -1,28 +1,36 @@
-dejo video explicativo sobre mi pagina web:
-https://youtu.be/zltg54VO0M8
+EntregaFinalMontani
+Proyecto Final Coder House - Python
+Comisión: 43870
+Alumno: Montani Julian
+Nombre del Proyecto
+Mercmusic
 
-
-
-Blog de Instrumentos Musicales
-¡Bienvenido al repositorio de mi proyecto de blog de instrumentos musicales! Este proyecto tiene como objetivo crear una plataforma en línea donde los amantes de la música pueden aprender sobre diferentes instrumentos musicales, sus características, historia y técnicas de interpretación. A continuación, encontrarás información importante sobre el proyecto.
+Versión
+1.0
 
 Descripción del Proyecto
-El Blog de Instrumentos Musicales es una página web diseñada para proporcionar información detallada sobre una amplia variedad de instrumentos musicales. Los usuarios podrán explorar artículos informativos, guías de compra, reseñas de instrumentos, y mucho más. La plataforma también permitirá a los usuarios compartir sus experiencias y conocimientos relacionados con instrumentos musicales a través de comentarios y contribuciones.
+Página Web destinada a usuarios que deseen informarse sobre instrumentos musicales, permitiendo enviar mensajes entre usuarios de la página.
 
-Características Principales
-Artículos en Profundidad: Publicaremos artículos detallados sobre diversos instrumentos musicales, cubriendo su historia, características técnicas, y consejos para su interpretación.
+A fin de navegar por las secciones de la página web, el usuario será requerido iniciar sesión o registrarse en caso de no contar con usuario o contraseña. En ambas opciones, una vez la página valide la autenticación del usuario, este será redirigido al inicio de la página web.
 
-Guías de Compra: Proporcionaremos a los lectores recomendaciones y guías de compra para ayudarles a elegir el instrumento musical adecuado para sus necesidades.
+Los usuarios pueden realizar las siguientes accciones:
 
-Comunidad Participativa: Fomentaremos la participación de la comunidad permitiendo a los usuarios registrados comentar en los artículos y contribuir con sus propias experiencias y conocimientos.
+Editar el perfil de Usuario
+Cambiar la contraseña de Usuario
+Cerrar Sesión
+Login en caso de haber cerrado sesión.
+Front-End
+HTML 5
 
-Diseño Responsivo: La página web estará optimizada para dispositivos móviles, tablets y computadoras de escritorio para garantizar una experiencia de usuario fluida en todos los dispositivos.
+CSS 3
 
-Tecnologías Utilizadas
-Frontend: Utilizamos HTML, CSS y JavaScript para el desarrollo del frontend.
+Javascript
 
-Backend: Utilizamos un servidor Node.js junto con Express.js para el backend.
+Bootstrap
 
-Base de Datos: Almacenamos datos en una base de datos MySQL para gestionar contenido y usuarios.
+Python
 
-Herramientas Adicionales: Usamos Git para el control de versiones y GitHub para el almacenamiento y colaboración en el código fuente.
+Django
+
+Video Demostración:
+https://youtu.be/zltg54VO0M8
