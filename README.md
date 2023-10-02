@@ -14,7 +14,7 @@ Versión
 1.0
 
 Descripción del Proyecto
-Página Web destinada a usuarios que deseen informarse sobre instrumentos musicales, permitiendo enviar mensajes entre usuarios de la página.
+Página Web destinada a usuarios que deseen informarse sobre instrumentos musicales, permitiendo ver diferentes tipos de instrumentos y sus caracteristicas.
 
 A fin de navegar por las secciones de la página web, el usuario será requerido iniciar sesión o registrarse en caso de no contar con usuario o contraseña. En ambas opciones, una vez la página valide la autenticación del usuario, este será redirigido al inicio de la página web.
 
